@@ -14,24 +14,24 @@ protoLoader.load(PROTO_PATH)
 
     const exchange = pingPongClient.exchange()
 
-    const { prompt, close } = createPrompt({
+    const { openPrompt, closePrompt } = createPrompt({
       'ping': () => exchange.write({/* Ping */})
     })
 
     exchange.on('data', data => {
       cowsay('pong')
-      prompt()
+      openPrompt()
     })
 
     exchange.on('end', () => {
-      close()
+      closePrompt()
       process.exit(0)
     })
 
     process.on('SIGINT', () => {
-      close()
+      closePrompt()
       exchange.end()
     })
 
-    prompt()
+    openPrompt()
   })

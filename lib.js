@@ -13,8 +13,8 @@ const createPrompt = (responseCallbacks) => {
   })
 
   return { 
-    prompt: () => rl.prompt(true),
-    close: rl.removeAllListeners
+    openPrompt: () => rl.prompt(true),
+    closePrompt: () => rl.removeAllListeners()
   }
 }
 
