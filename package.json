@@ -3,7 +3,7 @@
     "postinstall": "protop sync -l"
   },
   "dependencies": {
-    "@grpc/grpc-js": "1.1.1",
+    "@grpc/grpc-js": "1.1.8",
     "@grpc/proto-loader": "0.5.4",
     "cowsay": "1.4.0",
     "grpc": "1.24.3",
